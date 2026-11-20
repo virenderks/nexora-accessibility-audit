@@ -1,0 +1,412 @@
+
+/* =========================================
+   NEXORA INSIGHTS
+   ACCESSIBLE BLOG WEBSITE
+========================================= */
+
+/* 1. GLOBAL RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. ROOT VARIABLES */
+
+:root {
+    --primary-color: #17365D;
+    --secondary-color: #24558A;
+    --text-color: #263445;
+    --muted-color: #4B596B;
+    --background-color: #FFFFFF;
+    --light-background: #F2F6FA;
+    --border-color: #D5DFE9;
+    --focus-color: #B45309;
+    --white-color: #FFFFFF;
+}
+
+/* 3. GENERAL STYLING */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+/* 4. SKIP NAVIGATION LINK */
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    z-index: 1000;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.skip-link:focus {
+    top: 12px;
+}
+
+/* 5. KEYBOARD FOCUS INDICATORS */
+
+a:focus-visible {
+    outline: 3px solid var(--focus-color);
+    outline-offset: 4px;
+    border-radius: 3px;
+}
+
+/* 6. HEADER */
+
+.site-header {
+    background-color: var(--white-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-container {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+/* 7. NAVIGATION */
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-list a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 0;
+}
+
+.nav-list a:hover {
+    text-decoration: underline;
+}
+
+/* 8. HERO SECTION */
+
+.hero-section {
+    background-color: var(--light-background);
+    padding: 85px 0;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.eyebrow {
+    color: var(--secondary-color);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    color: var(--primary-color);
+    font-size: clamp(36px, 6vw, 56px);
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.hero-content h1 span {
+    display: block;
+}
+
+.hero-description {
+    color: var(--muted-color);
+    font-size: 18px;
+    max-width: 620px;
+    margin-bottom: 30px;
+}
+
+/* 9. PRIMARY BUTTON */
+
+.primary-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 13px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.primary-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+}
+
+/* 10. COMMON SECTION STYLING */
+
+.featured-section,
+.articles-section,
+.categories-section,
+.about-section {
+    padding: 65px 0;
+}
+
+.featured-section h2,
+.articles-section h2,
+.categories-section h2,
+.about-section h2 {
+    color: var(--primary-color);
+    font-size: 30px;
+    margin-bottom: 28px;
+}
+
+/* 11. FEATURED ARTICLE */
+
+.featured-card {
+    background-color: var(--light-background);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 35px;
+}
+
+.featured-content {
+    max-width: 700px;
+}
+
+.article-category {
+    color: var(--secondary-color);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.featured-content h3 {
+    color: var(--primary-color);
+    font-size: 27px;
+    line-height: 1.35;
+    margin-bottom: 15px;
+}
+
+.featured-content > p:not(.article-category) {
+    color: var(--muted-color);
+    margin-bottom: 20px;
+}
+
+.read-more {
+    font-weight: 700;
+}
+
+/* 12. LATEST ARTICLES */
+
+.articles-section {
+    background-color: var(--light-background);
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.article-card {
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.article-card h3 {
+    color: var(--primary-color);
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 13px;
+}
+
+.article-card > p:not(.article-category) {
+    color: var(--muted-color);
+    margin-bottom: 18px;
+}
+
+.article-card a {
+    font-weight: 700;
+}
+
+/* 13. CATEGORIES */
+
+.category-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    list-style: none;
+}
+
+.category-list li {
+    background-color: var(--light-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 18px 12px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* 14. ABOUT SECTION */
+
+.about-section {
+    background-color: var(--light-background);
+}
+
+.about-section p {
+    max-width: 750px;
+    color: var(--muted-color);
+    font-size: 17px;
+}
+
+/* 15. FOOTER */
+
+.site-footer {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 25px 0;
+    text-align: center;
+}
+
+.site-footer p {
+    font-size: 14px;
+}
+
+/* 16. RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+
+    .header-container {
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 0;
+        gap: 15px;
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 22px;
+    }
+
+    .hero-section {
+        padding: 65px 0;
+    }
+
+    .article-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .nav-list {
+        gap: 10px 16px;
+    }
+
+    .nav-list a {
+        font-size: 14px;
+    }
+
+    .hero-content h1 {
+        font-size: 35px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .article-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-card {
+        padding: 22px;
+    }
+
+    .featured-content h3 {
+        font-size: 23px;
+    }
+
+    .featured-section h2,
+    .articles-section h2,
+    .categories-section h2,
+    .about-section h2 {
+        font-size: 25px;
+    }
+
+}
+
+/* 17. REDUCED MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+}
